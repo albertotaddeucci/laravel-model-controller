@@ -14,6 +14,23 @@ class PageController extends Controller
 
         $movies = Movie::all();
 
+        // $num = $movie['vote'];
+
+        // function transformToStar($num)
+        // {
+        //     $max = round($num) / 2;
+        //     $star = [];
+
+        //     $i = 1;
+        //     while ($i < $max) {
+        //         $star[] = "⭐";
+        //         $i++;
+        //     }
+
+        //     return $star;
+        // };
+
+
         return view('home', compact('movies'));
     }
 }

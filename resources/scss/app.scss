@@ -1,1 +1,16 @@
+@use './partials/variables' as *;
+
 @import "~bootstrap/scss/bootstrap";
+
+.my_card_color {
+    background-color: $primaryColor;
+}
+
+.my_title {
+    padding-bottom: 5px;
+
+    border-bottom: 2px solid $accentColor;
+
+    text-transform: uppercase;
+    color: $accentColor;
+}
