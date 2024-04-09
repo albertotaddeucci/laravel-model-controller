@@ -2,6 +2,14 @@
 
 @import "~bootstrap/scss/bootstrap";
 
+@import './partials/navbar';
+
+
+.my_shadow {
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    border: 2px solid black;
+}
+
 .my_card_color {
     background-color: $primaryColor;
 }
@@ -13,4 +21,15 @@
 
     text-transform: uppercase;
     color: $accentColor;
+}
+
+.small {
+    font-size: 10px;
+    color: rgb(147, 147, 147);
+}
+
+body {
+    height: 100vh;
+    background-image: url('https://www.corrierenerd.it/wp-content/uploads/2008/08/wp1945897-scaled.jpg');
+    backdrop-filter: blur(5px) brightness(0.3);
 }

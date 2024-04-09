@@ -8,29 +8,29 @@ use Illuminate\Http\Request;
 
 class PageController extends Controller
 {
-    //
+
     public function index()
     {
-
         $movies = Movie::all();
 
-        // $num = $movie['vote'];
+        $moviesWithStars = $movies->map(function ($movie) {
+            $movie->stars = $this->toStar($movie->vote);
+        });
 
-        // function transformToStar($num)
-        // {
-        //     $max = round($num) / 2;
-        //     $star = [];
+        return view('home', compact('movies', 'moviesWithStars'));
+    }
 
-        //     $i = 1;
-        //     while ($i < $max) {
-        //         $star[] = "⭐";
-        //         $i++;
-        //     }
+    public function toStar($vote)
+    {
+        $max = round($vote / 2);
+        $stars = "";
 
-        //     return $star;
-        // };
+        $j = 0;
+        while ($j < $max) {
+            $stars .= "⭐";
+            $j++;
+        }
 
-
-        return view('home', compact('movies'));
+        return $stars;
     }
 }
